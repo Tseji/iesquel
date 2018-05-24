@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
-import { Adal5Service, Adal5HTTPService } from 'adal-angular5';
+import { Adal6Service, Adal6HTTPService } from 'adal-angular6';
 
 import { AppComponent } from './app.component';
 import { ProtectedComponent } from './protected/protected.component';
@@ -41,7 +41,7 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthGuardService, AuthService, Adal5Service,{ provide:Adal5HTTPService, useFactory:Adal5HTTPService.factory, deps: [HttpClient, Adal5Service] } ],
+  providers: [AuthGuardService, AuthService, Adal6Service,{ provide:Adal6HTTPService, useFactory:Adal6HTTPService.factory, deps: [HttpClient, Adal6Service] } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

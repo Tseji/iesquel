@@ -1,6 +1,6 @@
 // This service will manage signin, signout and users data
 
-import { Adal5HTTPService, Adal5Service } from 'adal-angular5';
+import { Adal6HTTPService, Adal6Service } from 'adal-angular6';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
@@ -10,13 +10,13 @@ export class AuthService {
  
 private _user=null;
 private _config = {
-   tenant:'136544d9-038e-4646-afff-10accb370679', 
-   clientId:'257b6c36-1168-4aac-be93-6f2cd81cec43', 
+   tenant:'29abf16e-95a2-4d13-8d51-6db1b775d45b', 
+   clientId:'4fee1b89-deee-4f74-9b13-684872c8b6e4', 
    redirectUri:"http://localhost:4200/auth-callback", 
    postLogoutRedirectUri:"http://localhost:4200" 
 }
  
-constructor(private _adal:Adal5Service) {
+constructor(private _adal:Adal6Service) {
    this._adal.init(this._config);
 }
  
